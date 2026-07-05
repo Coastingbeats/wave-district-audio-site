@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reviews | Wave District Audio</title>
+<title>Audio Plugins | Wave District Audio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -21,17 +21,20 @@
     <a href="live-sound.html">Live Sound</a>
     <a href="lessons.html">Private Lessons</a>
     <a href="session-musicians.html">Session Musicians</a>
-    <a href="plugins.html">Plugins</a>
+    <a href="plugins.html" class="active">Plugins</a>
     <a href="index.html#contact">Contact</a>
-    <a href="reviews.html" class="active">Reviews</a>
+    <a href="reviews.html">Reviews</a>
   </div>
 </nav>
 
 <section class="hero">
   <div class="hero-content">
-    <div class="eyebrow">Verified &middot; Los Angeles</div>
-    <h1>Real Engineer.<br><span>Real Business.</span></h1>
-    <p class="sub">Wave District Audio is a real, working audio business in Los Angeles &mdash; not a side hustle. Worked with us? Leave a review below.</p>
+    <div class="eyebrow">Free Plugin &middot; Wave District Audio</div>
+    <h1>Wave District<br><span>Channel Strip</span></h1>
+    <p class="sub">A free audio plugin built by Wave District Audio &mdash; available now for Windows (VST3) and Mac / Logic Pro (AU).</p>
+    <div class="cta-row">
+      <a href="#download" class="btn btn-primary">Download Free</a>
+    </div>
   </div>
 </section>
 
@@ -39,59 +42,50 @@
   <path d="M0,38 C220,15 340,8 460,10 C620,13 680,25 800,28 C950,32 1080,35 1200,38 L1200,60 L0,60 Z" fill="#161f30"></path>
 </svg>
 
-<!--
-  REVIEW LINK: currently points to a Google Maps search for the business name,
-  which works right now and will automatically resolve to the real Google
-  Business Profile (with a "Write a review" button) once that profile is
-  created and verified. Once you have the profile, you can swap this href
-  for the direct review link Google gives you, which looks like:
-  https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID
--->
-<section id="leave-review">
-  <div class="contact-box">
-    <h2>Leave Us a Review</h2>
-    <p>Had a session, lesson, or gig with us? A quick Google review helps other artists and event hosts find Wave District Audio.</p>
-    <div class="cta-row">
-      <a href="https://www.google.com/maps/search/?api=1&query=Wave+District+Audio+Los+Angeles+CA" target="_blank" rel="noopener" class="btn btn-primary">Leave a Review on Google</a>
+<section id="plugin">
+  <div class="section-label">Audio Plugins</div>
+  <h2>Wave District Channel Strip</h2>
+  <div class="pricing-grid" style="max-width:420px; margin-left:auto; margin-right:auto;">
+    <div class="pricing-card featured">
+      <span class="pc-tag">Wave District Audio</span>
+      <h3>Channel Strip</h3>
+      <p class="pc-desc">Our in-house channel strip plugin &mdash; free to download and use while we're in early release.</p>
+      <div class="pc-price"><span class="amount">Free</span></div>
+      <ul class="pc-features">
+        <li>VST3 format (Windows)</li>
+        <li>AU / Component format (Mac, Logic Pro)</li>
+        <li>Free during early release</li>
+      </ul>
+      <div class="pc-note">Pricing may change in the future &mdash; this download is free for now.</div>
     </div>
   </div>
 </section>
 
-<section id="verified">
-  <div class="section-label">Verified Business Info</div>
-  <h2>Who you're working with</h2>
-  <div class="stats-row">
-    <div class="stat-box"><div class="num">10+</div><div class="label">Years of Experience</div></div>
-    <div class="stat-box"><div class="num">AS</div><div class="label">Audio Production, LA Recording School</div></div>
+<section id="download">
+  <div class="section-label">Download</div>
+  <h2>Get the Plugin</h2>
+  <div class="cards">
+    <div class="card">
+      <span class="tag">WINDOWS</span>
+      <h3>VST3</h3>
+      <p>For VST3-compatible DAWs on Windows.</p>
+      <a href="plugins/Wave-District-Channel-Strip-VST3.zip" download class="btn btn-primary">Download VST3 (.zip)</a>
+    </div>
+    <div class="card">
+      <span class="tag">MAC &middot; LOGIC PRO</span>
+      <h3>AU / Component</h3>
+      <p>For Logic Pro and other AU-compatible DAWs on Mac.</p>
+      <a href="plugins/Wave-District-Channel-Strip-AU.zip" download class="btn btn-primary">Download AU (.zip)</a>
+    </div>
   </div>
-  <div class="equip-grid" style="margin-top:24px;">
-    <div class="equip-card">
-      <h4>Business</h4>
-      <ul>
-        <li>Wave District Audio</li>
-        <li>Los Angeles, CA</li>
-      </ul>
-    </div>
-    <div class="equip-card">
-      <h4>Contact</h4>
-      <ul>
-        <li>wavedistrictla@gmail.com</li>
-        <li>(213) 296-5650</li>
-      </ul>
-    </div>
-    <div class="equip-card">
-      <h4>Services</h4>
-      <ul>
-        <li>Recording, Mixing &amp; Mastering</li>
-        <li>Live Sound, Lessons, Session Musicians</li>
-      </ul>
-    </div>
+  <div class="addons">
+    <span><b>Installation:</b> unzip the file, then move the .vst3 (Windows) or .component (Mac) file into your system's plugin folder and rescan plugins in your DAW.</span>
   </div>
 </section>
 
 <section id="contact">
   <div class="contact-box">
-    <h2>Ready to work together?</h2>
+    <h2>Questions about the plugin?</h2>
     <div class="cta-row">
       <a id="emailCta" class="btn btn-primary" href="mailto:wavedistrictla@gmail.com">Email Us</a>
     </div>
