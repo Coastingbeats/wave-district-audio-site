@@ -94,10 +94,17 @@ export default async (req, context) => {
     }
 
     // Create the invoice, collecting it by emailing the customer (not auto-charging).
+    // NOTE: Stripe's default for new invoices is to NOT auto-attach pending
+    // invoice items (pending_invoice_items_behavior defaults to "exclude" on
+    // current API versions). Without this flag the invoice comes out empty
+    // ($0 due), which Stripe then auto-marks as paid and refuses to "send"
+    // (that's the "cannot be sent right now" error). Explicitly including
+    // pending items pulls in the invoiceitems created just above.
     const invoice = await stripePost('invoices', {
       customer: customerId,
       collection_method: 'send_invoice',
       days_until_due: '7',
+      pending_invoice_items_behavior: 'include',
       description: details
         ? `Wave District Audio — 50% deposit. Project details: ${details}`
         : 'Wave District Audio — 50% deposit',
