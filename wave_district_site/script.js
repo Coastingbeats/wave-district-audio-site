@@ -87,11 +87,13 @@ document.addEventListener('DOMContentLoaded', function () {
     var submitBtn = section.querySelector('.quote-submit-btn');
     var successEl = section.querySelector('.quote-success');
 
-    function sendViaMailto(nameField, emailField, phoneField, detailsField, selectedLines, grand) {
+    function sendViaMailto(nameField, emailField, phoneField, detailsField, selectedLines, grand, instructorField, instrumentField) {
       var bodyLines = [];
       bodyLines.push('Name: ' + (nameField ? nameField.value : ''));
       bodyLines.push('Email: ' + (emailField ? emailField.value : ''));
       bodyLines.push('Phone: ' + (phoneField ? phoneField.value : ''));
+      if (instructorField && instructorField.value) { bodyLines.push('Instructor: ' + instructorField.value); }
+      if (instrumentField && instrumentField.value) { bodyLines.push('Lesson Topic: ' + instrumentField.value); }
       bodyLines.push('');
       bodyLines.push('Requested services:');
       if (selectedLines.length) {
@@ -118,6 +120,14 @@ document.addEventListener('DOMContentLoaded', function () {
         var emailField = section.querySelector('.q-email');
         var phoneField = section.querySelector('.q-phone');
         var detailsField = section.querySelector('.q-details');
+        var instructorField = section.querySelector('.q-instructor');
+        var instrumentField = section.querySelector('.q-instrument');
+
+        var detailsValue = detailsField ? detailsField.value : '';
+        var prefixParts = [];
+        if (instructorField && instructorField.value) { prefixParts.push('Instructor: ' + instructorField.value); }
+        if (instrumentField && instrumentField.value) { prefixParts.push('Lesson Topic: ' + instrumentField.value); }
+        var detailsWithPrefs = prefixParts.length ? (prefixParts.join(' | ') + '\n' + detailsValue) : detailsValue;
 
         var selectedLines = [];
         var grand = 0;
@@ -135,14 +145,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         if (!selectedLines.length) {
-          sendViaMailto(nameField, emailField, phoneField, detailsField, selectedLines, grand);
+          sendViaMailto(nameField, emailField, phoneField, detailsField, selectedLines, grand, instructorField, instrumentField);
           if (successEl) successEl.hidden = false;
           return;
         }
 
         var email = emailField ? emailField.value.trim() : '';
         if (!email) {
-          sendViaMailto(nameField, emailField, phoneField, detailsField, selectedLines, grand);
+          sendViaMailto(nameField, emailField, phoneField, detailsField, selectedLines, grand, instructorField, instrumentField);
           if (successEl) successEl.hidden = false;
           return;
         }
@@ -158,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: nameField ? nameField.value : '',
             email: email,
             phone: phoneField ? phoneField.value : '',
-            details: detailsField ? detailsField.value : '',
+            details: detailsWithPrefs,
             lines: selectedLines.map(function (l) { return { name: l.name, total: l.total }; }),
           }),
         }).then(function (res) {
@@ -173,13 +183,13 @@ document.addEventListener('DOMContentLoaded', function () {
             }
           } else {
             // Fall back to email so the request still reaches us even if Stripe isn't wired up yet.
-            sendViaMailto(nameField, emailField, phoneField, detailsField, selectedLines, grand);
+            sendViaMailto(nameField, emailField, phoneField, detailsField, selectedLines, grand, instructorField, instrumentField);
             if (successEl) successEl.hidden = false;
           }
         }).catch(function () {
           submitBtn.disabled = false;
           submitBtn.textContent = originalLabel;
-          sendViaMailto(nameField, emailField, phoneField, detailsField, selectedLines, grand);
+          sendViaMailto(nameField, emailField, phoneField, detailsField, selectedLines, grand, instructorField, instrumentField);
           if (successEl) successEl.hidden = false;
         });
       });

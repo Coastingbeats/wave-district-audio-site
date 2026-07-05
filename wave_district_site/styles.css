@@ -366,12 +366,19 @@ a:focus-visible, button:focus-visible, .panel:focus-visible {
 .stems-upload p { color: var(--text-dim); font-size: 0.88rem; margin-bottom: 16px; }
 .quote-fields { display: flex; flex-direction: column; gap: 16px; }
 .quote-fields label { color: var(--text-dim); font-size: 0.85rem; font-weight: 600; display: flex; flex-direction: column; gap: 6px; }
-.quote-fields input, .quote-fields textarea {
+.quote-fields input, .quote-fields select, .quote-fields textarea {
   font-family: inherit; background: rgba(255,255,255,0.03); color: var(--text);
   border: 1px solid rgba(232,236,241,0.15); border-radius: 8px; padding: 12px 14px; font-size: 0.95rem;
   transition: border-color .15s, background .15s;
 }
-.quote-fields input:focus, .quote-fields textarea:focus {
+.quote-fields select {
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e8ecf1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 14px center; background-size: 16px;
+  padding-right: 38px;
+}
+.quote-fields select option { background: #101826; color: var(--text); }
+.quote-fields input:focus, .quote-fields select:focus, .quote-fields textarea:focus {
   outline: none; border-color: var(--teal); background: rgba(45,212,196,0.05);
 }
 .quote-fields textarea { resize: vertical; min-height: 90px; }
