@@ -42,31 +42,6 @@
   <path d="M0,38 C220,15 340,8 460,10 C620,13 680,25 800,28 C950,32 1080,35 1200,38 L1200,60 L0,60 Z" fill="#161f30"></path>
 </svg>
 
-<section id="details">
-  <div class="section-label">What's Included</div>
-  <h2>More details coming soon</h2>
-  <div class="cards">
-    <div class="card">
-      <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle><path d="M9 18V6l12-2v12"></path></svg></span>
-      <span class="tag">IN-STUDIO</span>
-      <h3>Tracked In-House</h3>
-      <p>Musician records their part live in the studio, engineered and captured in the same session.</p>
-    </div>
-    <div class="card">
-      <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 15-4"></path><path d="M20 12a8 8 0 0 1-15 4"></path><path d="M19 4v4h-4"></path><path d="M5 20v-4h4"></path></svg></span>
-      <span class="tag">REMOTE</span>
-      <h3>Remote Sessions</h3>
-      <p>Send your track, get back a recorded part &mdash; no studio visit required.</p>
-    </div>
-    <div class="card">
-      <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><line x1="7" y1="8" x2="17" y2="8"></line><line x1="7" y1="12" x2="17" y2="12"></line><line x1="7" y1="16" x2="12" y2="16"></line></svg></span>
-      <span class="tag">INSTRUMENTATION</span>
-      <h3>Available Players</h3>
-      <p>Roster and instrument list coming soon &mdash; guitar, bass, drums, keys, and more.</p>
-    </div>
-  </div>
-</section>
-
 <section id="player">
   <div class="section-label">Available Session Player</div>
   <h2>Cameron Davis</h2>
@@ -82,12 +57,6 @@
       <div class="stat-box"><div class="num">3x</div><div class="label">District Arts Wins (as Coach)</div></div>
       <div class="stat-box"><div class="num">2M+</div><div class="label">TikTok Views</div></div>
     </div>
-  </div>
-  <div class="survey-label" style="margin-top:36px;">Choose which instrument you need from Cameron</div>
-  <div class="survey-options" data-group="instrument">
-    <button type="button" class="survey-pill" data-instrument="Guitar">Guitar</button>
-    <button type="button" class="survey-pill" data-instrument="Bass">Bass</button>
-    <button type="button" class="survey-pill" data-instrument="Drums">Drums</button>
   </div>
 </section>
 
@@ -160,10 +129,21 @@
         <a href="https://wetransfer.com/?to=wavedistrictla@gmail.com" target="_blank" rel="noopener" class="btn btn-outline">Send Files &rarr;</a>
       </div>
       <div class="quote-fields">
+        <label>Session Player<select class="q-instructor">
+          <option value="">No preference</option>
+          <option value="Cameron Davis">Cameron Davis (Guitar, Bass, Drums)</option>
+          <option value="Ian Fischer">Ian Fischer (Drums)</option>
+        </select></label>
+        <label>Instrument Needed<select class="q-instrument">
+          <option value="">Select an instrument</option>
+          <option value="Guitar">Guitar</option>
+          <option value="Bass">Bass</option>
+          <option value="Drums">Drums</option>
+        </select></label>
         <label>Name<input type="text" class="q-name" placeholder="Your name"></label>
         <label>Email<input type="email" class="q-email" placeholder="you@email.com"></label>
         <label>Phone (optional)<input type="tel" class="q-phone" placeholder="(xxx) xxx-xxxx"></label>
-        <label>Project Details<textarea class="q-details" rows="4" placeholder="Instrument needed, style, deadline"></textarea></label>
+        <label>Project Details<textarea class="q-details" rows="4" placeholder="Style, deadline, and any other details"></textarea></label>
       </div>
     </div>
     <div class="quote-services-col">
